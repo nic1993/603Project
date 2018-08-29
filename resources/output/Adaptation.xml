@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<nta>
+  <declaration>chan effect,monitor,trigger,trigger,trigger,trigger,change,change;</declaration>
+  <template>
+    <name>StarNum_GPS</name>
+    <location id="id76" y="37" x="35">
+      <name y="37" x="35">Waiting</name>
+    </location>
+    <location id="id124" y="37" x="265">
+      <name y="37" x="265">Effecting</name>
+    </location>
+    <init ref="id76"/>
+    <transition>
+      <source ref="id76"/>
+      <target ref="id124"/>
+    </transition>
+    <transition>
+      <source ref="id124"/>
+      <target ref="id76"/>
+      <label y="50" x="50" kind="select"></label>
+      <label y="155" x="42" kind="synchronisation">effect!</label>
+      <label y="160" x="47" kind="assignment"></label>
+      <nail y="150" x="37"/>
+    </transition>
+  </template>
+  <template>
+    <name>GPS_Status_Probe</name>
+    <location id="id84" y="37" x="35">
+      <name y="37" x="35">Waiting</name>
+    </location>
+    <location id="id132" y="37" x="265">
+      <name y="37" x="265">Probe</name>
+    </location>
+    <init ref="id84"/>
+    <transition>
+      <source ref="id84"/>
+      <target ref="id132"/>
+    </transition>
+    <transition>
+      <source ref="id132"/>
+      <target ref="id84"/>
+      <label y="50" x="50" kind="select"></label>
+      <label y="155" x="42" kind="synchronisation">monitor!</label>
+      <label y="160" x="47" kind="assignment"></label>
+      <nail y="150" x="37"/>
+    </transition>
+  </template>
+  <template>
+    <name>GPS_status_monitor</name>
+    <location id="id92" y="37" x="265">
+      <name y="37" x="265">Waiting</name>
+    </location>
+    <location id="id212" y="150" x="35">
+      <name y="150" x="35">Over</name>
+    </location>
+    <location id="id140" y="150" x="495">
+      <name y="150" x="495">Comparing</name>
+    </location>
+    <init ref="id92"/>
+    <transition>
+      <source ref="id212"/>
+      <target ref="id92"/>
+      <label y="98" x="155" kind="assignment"></label>
+    </transition>
+    <transition>
+      <source ref="id92"/>
+      <target ref="id140"/>
+      <label y="50" x="50" kind="select"></label>
+      <label y="98" x="385" kind="synchronisation">monitor?</label>
+      <label y="103" x="390" kind="assignment"></label>
+    </transition>
+    <transition>
+      <source ref="id140"/>
+      <target ref="id212"/>
+      <label y="50" x="50" kind="select"></label>
+      <label y="155" x="270" kind="guard">sensor_advantage&amp;lt;1</label>
+      <label y="160" x="275" kind="assignment"></label>
+    </transition>
+    <transition>
+      <source ref="id140"/>
+      <target ref="id212"/>
+      <label y="50" x="50" kind="select"></label>
+      <label y="235" x="125" kind="synchronisation">trigger!</label>
+      <label y="240" x="130" kind="guard">sensor_advantage&amp;gt;=2</label>
+      <label y="245" x="135" kind="assignment"></label>
+      <nail y="230" x="120"/>
+    </transition>
+    <transition>
+      <source ref="id140"/>
+      <target ref="id212"/>
+      <label y="50" x="50" kind="select"></label>
+      <label y="200" x="95" kind="synchronisation">trigger!</label>
+      <label y="205" x="100" kind="guard">sensor_advantage&amp;gt;=1</label>
+      <label y="210" x="105" kind="assignment"></label>
+      <nail y="195" x="90"/>
+    </transition>
+  </template>
+  <template>
+    <name>GPS_status_alalyzer</name>
+    <location id="id100" y="112" x="265">
+      <name y="112" x="265">Waiting</name>
+    </location>
+    <location id="id236" y="225" x="35">
+      <name y="225" x="35">Over</name>
+    </location>
+    <location id="id164" y="225" x="495">
+      <name y="225" x="495">Analyzing</name>
+    </location>
+    <location id="id220" y="37" x="495">
+      <name y="37" x="495">Analyzing</name>
+    </location>
+    <init ref="id100"/>
+    <transition>
+      <source ref="id236"/>
+      <target ref="id100"/>
+      <label y="173" x="155" kind="assignment"></label>
+    </transition>
+    <transition>
+      <source ref="id100"/>
+      <target ref="id164"/>
+      <label y="50" x="50" kind="select"></label>
+      <label y="173" x="385" kind="synchronisation">trigger?</label>
+      <label y="178" x="390" kind="assignment"></label>
+    </transition>
+    <transition>
+      <source ref="id164"/>
+      <target ref="id236"/>
+      <label y="50" x="50" kind="select"></label>
+      <label y="230" x="270" kind="guard">has_armed==false</label>
+      <label y="235" x="275" kind="assignment"></label>
+    </transition>
+    <transition>
+      <source ref="id164"/>
+      <target ref="id236"/>
+      <label y="50" x="50" kind="select"></label>
+      <label y="235" x="200" kind="synchronisation">trigger!</label>
+      <label y="240" x="205" kind="guard">has_armed==true</label>
+      <label y="245" x="210" kind="assignment"></label>
+      <nail y="230" x="195"/>
+    </transition>
+    <transition>
+      <source ref="id100"/>
+      <target ref="id220"/>
+      <label y="50" x="50" kind="select"></label>
+      <label y="79" x="385" kind="synchronisation">trigger?</label>
+      <label y="84" x="390" kind="assignment"></label>
+    </transition>
+    <transition>
+      <source ref="id220"/>
+      <target ref="id236"/>
+      <label y="50" x="50" kind="select"></label>
+      <label y="136" x="270" kind="guard">has_armed==false</label>
+      <label y="141" x="275" kind="assignment"></label>
+    </transition>
+    <transition>
+      <source ref="id220"/>
+      <target ref="id236"/>
+      <label y="50" x="50" kind="select"></label>
+      <label y="235" x="106" kind="synchronisation">trigger!</label>
+      <label y="240" x="111" kind="guard">has_armed==true</label>
+      <label y="245" x="116" kind="assignment"></label>
+      <nail y="230" x="101"/>
+    </transition>
+  </template>
+  <template>
+    <name>GPS_status_P&amp;E</name>
+    <location id="id108" y="112" x="265">
+      <name y="112" x="265">Waiting</name>
+    </location>
+    <location id="id260" y="225" x="35">
+      <name y="225" x="35">Over</name>
+    </location>
+    <location id="id188" y="225" x="495">
+      <name y="225" x="495">Planning</name>
+    </location>
+    <location id="id244" y="37" x="495">
+      <name y="37" x="495">Planning</name>
+    </location>
+    <init ref="id108"/>
+    <transition>
+      <source ref="id260"/>
+      <target ref="id108"/>
+      <label y="50" x="50" kind="select"></label>
+      <label y="173" x="155" kind="assignment"></label>
+    </transition>
+    <transition>
+      <source ref="id108"/>
+      <target ref="id188"/>
+      <label y="50" x="50" kind="select"></label>
+      <label y="173" x="385" kind="synchronisation">trigger?</label>
+      <label y="178" x="390" kind="assignment"></label>
+    </transition>
+    <transition>
+      <source ref="id188"/>
+      <target ref="id260"/>
+      <label y="230" x="270" kind="synchronisation">change!</label>
+    </transition>
+    <transition>
+      <source ref="id108"/>
+      <target ref="id244"/>
+      <label y="50" x="50" kind="select"></label>
+      <label y="79" x="385" kind="synchronisation">trigger?</label>
+      <label y="84" x="390" kind="assignment"></label>
+    </transition>
+    <transition>
+      <source ref="id244"/>
+      <target ref="id260"/>
+      <label y="136" x="270" kind="synchronisation">change!</label>
+    </transition>
+  </template>
+  <template>
+    <name>GPS_connecter</name>
+    <location id="id116" y="37" x="265">
+      <name y="37" x="265">Waiting</name>
+    </location>
+    <location id="id204" y="37" x="495">
+      <name y="37" x="495">Changed</name>
+    </location>
+    <location id="id252" y="37" x="35">
+      <name y="37" x="35">Changed</name>
+    </location>
+    <init ref="id116"/>
+    <transition>
+      <source ref="id116"/>
+      <target ref="id204"/>
+      <label y="42" x="385" kind="synchronisation">change?</label>
+    </transition>
+    <transition>
+      <source ref="id204"/>
+      <target ref="id116"/>
+      <nail y="380" x="37"/>
+    </transition>
+    <transition>
+      <source ref="id116"/>
+      <target ref="id252"/>
+      <label y="42" x="155" kind="synchronisation">change?</label>
+    </transition>
+    <transition>
+      <source ref="id252"/>
+      <target ref="id116"/>
+      <nail y="150" x="37"/>
+    </transition>
+  </template>
+  <system>starnum_gps = StarNum_GPS();gps_status_probe = GPS_Status_Probe();gps_status_monitor = GPS_status_monitor();gps_status_alalyzer = GPS_status_alalyzer();gps_status_p&amp;e = GPS_status_P&amp;E();gps_connecter = GPS_connecter();system starnum_gps,gps_status_probe,gps_status_monitor,gps_status_alalyzer,gps_status_p&amp;e,gps_connecter;</system>
+</nta>

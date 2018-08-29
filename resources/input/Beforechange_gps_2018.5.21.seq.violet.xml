@@ -1,0 +1,745 @@
+<SequenceDiagramGraph id="1">
+  <nodes id="2">
+    <LifelineNode id="3">
+      <children id="4">
+        <ActivationBarNode id="5">
+          <children id="6"/>
+          <parent class="LifelineNode" reference="3"/>
+          <location class="Point2D.Double" id="7" x="49.0" y="242.73150438526943"/>
+          <backgroundColor id="8">
+            <red>255</red>
+            <green>255</green>
+            <blue>255</blue>
+            <alpha>255</alpha>
+          </backgroundColor>
+          <borderColor id="9">
+            <red>191</red>
+            <green>191</green>
+            <blue>191</blue>
+            <alpha>255</alpha>
+          </borderColor>
+          <textColor id="10">
+            <red>51</red>
+            <green>51</green>
+            <blue>51</blue>
+            <alpha>255</alpha>
+          </textColor>
+        </ActivationBarNode>
+      </children>
+      <location class="Point2D.Double" id="11" x="158.0" y="0.0"/>
+      <ID>EAID_2dcfc89d-1eff-41be-99f7-4cd31f173c6a</ID>
+      <id id="12"/>
+      <backgroundColor reference="8"/>
+      <borderColor reference="9"/>
+      <textColor reference="10"/>
+      <global id="13">
+        <text></text>
+      </global>
+      <local id="14">
+        <text></text>
+      </local>
+      <name id="15">
+        <text>&lt;&lt;Soft-Self&gt;&gt; :GPS_Status_Probe</text>
+      </name>
+      <width>114.0</width>
+    </LifelineNode>
+    <LifelineNode id="16">
+      <children id="17">
+        <ActivationBarNode id="18">
+          <children id="19"/>
+          <parent class="LifelineNode" reference="16"/>
+          <location class="Point2D.Double" id="20" x="53.0" y="323.1911968803048"/>
+          <backgroundColor reference="8"/>
+          <borderColor reference="9"/>
+          <textColor reference="10"/>
+        </ActivationBarNode>
+      </children>
+      <location class="Point2D.Double" id="21" x="293.0" y="0.0"/>
+      <ID>EAID_85115917-6f77-4ebe-bcb9-af00b077bde8</ID>
+      <id id="22"/>
+      <backgroundColor reference="8"/>
+      <borderColor reference="9"/>
+      <textColor reference="10"/>
+      <global id="23">
+        <text></text>
+      </global>
+      <local id="24">
+        <text></text>
+      </local>
+      <name id="25">
+        <text>&lt;&lt;Monitor&gt;&gt; :GPS_status_monitor</text>
+      </name>
+      <width>122.0</width>
+    </LifelineNode>
+    <LifelineNode id="26">
+      <children id="27">
+        <ActivationBarNode id="28">
+          <children id="29"/>
+          <parent class="LifelineNode" reference="26"/>
+          <location class="Point2D.Double" id="30" x="52.5" y="507.1911968803048"/>
+          <backgroundColor reference="8"/>
+          <borderColor reference="9"/>
+          <textColor reference="10"/>
+        </ActivationBarNode>
+      </children>
+      <location class="Point2D.Double" id="31" x="443.0" y="0.0"/>
+      <ID>EAID_77934f21-1746-4038-b904-0d54f3291557</ID>
+      <id id="32"/>
+      <backgroundColor reference="8"/>
+      <borderColor reference="9"/>
+      <textColor reference="10"/>
+      <global id="33">
+        <text></text>
+      </global>
+      <local id="34">
+        <text></text>
+      </local>
+      <name id="35">
+        <text>&lt;&lt;Analyzer&gt;&gt; :GPS_status_alalyzer</text>
+      </name>
+      <width>121.0</width>
+    </LifelineNode>
+    <LifelineNode id="36">
+      <children id="37">
+        <ActivationBarNode id="38">
+          <children id="39"/>
+          <parent class="LifelineNode" reference="36"/>
+          <location class="Point2D.Double" id="40" x="38.5" y="840.9746759252586"/>
+          <backgroundColor reference="8"/>
+          <borderColor reference="9"/>
+          <textColor reference="10"/>
+        </ActivationBarNode>
+        <ActivationBarNode id="41">
+          <children id="42"/>
+          <parent class="LifelineNode" reference="36"/>
+          <location class="Point2D.Double" id="43" x="38.5" y="983.4742841072502"/>
+          <backgroundColor id="44">
+            <red>255</red>
+            <green>255</green>
+            <blue>255</blue>
+            <alpha>255</alpha>
+          </backgroundColor>
+          <borderColor id="45">
+            <red>191</red>
+            <green>191</green>
+            <blue>191</blue>
+            <alpha>255</alpha>
+          </borderColor>
+          <textColor id="46">
+            <red>51</red>
+            <green>51</green>
+            <blue>51</blue>
+            <alpha>255</alpha>
+          </textColor>
+        </ActivationBarNode>
+      </children>
+      <location class="Point2D.Double" id="47" x="740.0" y="27.0"/>
+      <ID>EAID_62a71d8f-0dcb-45c4-927d-05659235bc0a</ID>
+      <id id="48"/>
+      <backgroundColor reference="8"/>
+      <borderColor reference="9"/>
+      <textColor reference="10"/>
+      <global id="49">
+        <text></text>
+      </global>
+      <local id="50">
+        <text></text>
+      </local>
+      <name id="51">
+        <text>&lt;&lt;Soft-Self&gt;&gt; :GPS_connecter</text>
+      </name>
+      <width>93.0</width>
+    </LifelineNode>
+    <State id="52">
+      <children id="53"/>
+      <location class="Point2D.Double" id="54" x="163.0" y="70.0"/>
+      <ID>EAID_4f35a8ef-ba87-4da4-9af8-71184e8b6c31</ID>
+      <id id="55"/>
+      <backgroundColor reference="8"/>
+      <borderColor reference="9"/>
+      <textColor reference="10"/>
+      <name id="56">
+        <text>Waiting</text>
+      </name>
+      <Select id="57">
+        <text></text>
+      </Select>
+      <Update id="58">
+        <text></text>
+      </Update>
+      <Invariant id="59">
+        <text></text>
+      </Invariant>
+    </State>
+    <State id="60">
+      <children id="61"/>
+      <location class="Point2D.Double" id="62" x="306.8408964152537" y="70.0"/>
+      <ID>EAID_faf2a2e8-1766-4d6d-8b28-1e49e0a5b612</ID>
+      <id id="63"/>
+      <backgroundColor reference="8"/>
+      <borderColor reference="9"/>
+      <textColor reference="10"/>
+      <name id="64">
+        <text>Waiting</text>
+      </name>
+      <Select id="65">
+        <text></text>
+      </Select>
+      <Update id="66">
+        <text></text>
+      </Update>
+      <Invariant id="67">
+        <text></text>
+      </Invariant>
+    </State>
+    <State id="68">
+      <children id="69"/>
+      <location class="Point2D.Double" id="70" x="455.0" y="74.0"/>
+      <ID>EAID_6c81057e-6982-4ec8-967a-08d56960f785</ID>
+      <id id="71"/>
+      <backgroundColor reference="8"/>
+      <borderColor reference="9"/>
+      <textColor reference="10"/>
+      <name id="72">
+        <text>Waiting</text>
+      </name>
+      <Select id="73">
+        <text></text>
+      </Select>
+      <Update id="74">
+        <text></text>
+      </Update>
+      <Invariant id="75">
+        <text></text>
+      </Invariant>
+    </State>
+    <State id="76">
+      <children id="77"/>
+      <location class="Point2D.Double" id="78" x="594.0" y="73.0"/>
+      <ID>EAID_8ab384fa-22dc-49e7-b3eb-d4762cf7afac</ID>
+      <id id="79"/>
+      <backgroundColor reference="8"/>
+      <borderColor reference="9"/>
+      <textColor reference="10"/>
+      <name id="80">
+        <text>Waiting</text>
+      </name>
+      <Select id="81">
+        <text></text>
+      </Select>
+      <Update id="82">
+        <text></text>
+      </Update>
+      <Invariant id="83">
+        <text></text>
+      </Invariant>
+    </State>
+    <State id="84">
+      <children id="85"/>
+      <location class="Point2D.Double" id="86" x="743.0" y="70.0"/>
+      <ID>EAID_576d9c95-d865-4441-b56e-1723c6c6b1f9</ID>
+      <id id="87"/>
+      <backgroundColor reference="8"/>
+      <borderColor reference="9"/>
+      <textColor reference="10"/>
+      <name id="88">
+        <text>Waiting</text>
+      </name>
+      <Select id="89">
+        <text></text>
+      </Select>
+      <Update id="90">
+        <text></text>
+      </Update>
+      <Invariant id="91">
+        <text></text>
+      </Invariant>
+    </State>
+    <State id="92">
+      <children id="93"/>
+      <location class="Point2D.Double" id="94" x="167.56762134500815" y="252.3511003899619"/>
+      <ID>EAID_0c470ab4-90e5-4174-b424-98f8fce5fcb2</ID>
+      <id id="95"/>
+      <backgroundColor reference="8"/>
+      <borderColor reference="9"/>
+      <textColor reference="10"/>
+      <name id="96">
+        <text>Probe</text>
+      </name>
+      <Select id="97">
+        <text></text>
+      </Select>
+      <Update id="98">
+        <text></text>
+      </Update>
+      <Invariant id="99">
+        <text></text>
+      </Invariant>
+    </State>
+    <State id="100">
+      <children id="101"/>
+      <location class="Point2D.Double" id="102" x="300.0" y="337.0"/>
+      <ID>EAID_5ac27a18-2cfa-4b92-89ae-3ffd8424e006</ID>
+      <id id="103"/>
+      <backgroundColor reference="8"/>
+      <borderColor reference="9"/>
+      <textColor reference="10"/>
+      <name id="104">
+        <text>Comparing</text>
+      </name>
+      <Select id="105">
+        <text></text>
+      </Select>
+      <Update id="106">
+        <text></text>
+      </Update>
+      <Invariant id="107">
+        <text></text>
+      </Invariant>
+    </State>
+    <State id="108">
+      <children id="109"/>
+      <location class="Point2D.Double" id="110" x="302.0" y="403.0"/>
+      <ID>EAID_6e0b2483-07e5-4c73-af00-165ec4bbe0ff</ID>
+      <id id="111"/>
+      <backgroundColor reference="8"/>
+      <borderColor reference="9"/>
+      <textColor reference="10"/>
+      <name id="112">
+        <text>Over</text>
+      </name>
+      <Select id="113">
+        <text></text>
+      </Select>
+      <Update id="114">
+        <text></text>
+      </Update>
+      <Invariant id="115">
+        <text></text>
+      </Invariant>
+    </State>
+    <State id="116">
+      <children id="117"/>
+      <location class="Point2D.Double" id="118" x="305.8408964152537" y="550.0"/>
+      <ID>EAID_59c52ecb-83bf-4933-8d2c-934d5978ea0a</ID>
+      <id id="119"/>
+      <backgroundColor reference="8"/>
+      <borderColor reference="9"/>
+      <textColor reference="10"/>
+      <name id="120">
+        <text>Over</text>
+      </name>
+      <Select id="121">
+        <text></text>
+      </Select>
+      <Update id="122">
+        <text></text>
+      </Update>
+      <Invariant id="123">
+        <text></text>
+      </Invariant>
+    </State>
+    <State id="124">
+      <children id="125"/>
+      <location class="Point2D.Double" id="126" x="450.0" y="526.0"/>
+      <ID>EAID_23c4f47f-955a-4f1a-9327-56e4aedf480c</ID>
+      <id id="127"/>
+      <backgroundColor reference="8"/>
+      <borderColor reference="9"/>
+      <textColor reference="10"/>
+      <name id="128">
+        <text>Analyzing</text>
+      </name>
+      <Select id="129">
+        <text></text>
+      </Select>
+      <Update id="130">
+        <text></text>
+      </Update>
+      <Invariant id="131">
+        <text></text>
+      </Invariant>
+    </State>
+    <State id="132">
+      <children id="133"/>
+      <location class="Point2D.Double" id="134" x="452.0" y="594.0"/>
+      <ID>EAID_6924d124-54e6-4011-8503-2ab440e91d35</ID>
+      <id id="135"/>
+      <backgroundColor reference="8"/>
+      <borderColor reference="9"/>
+      <textColor reference="10"/>
+      <name id="136">
+        <text>Over</text>
+      </name>
+      <Select id="137">
+        <text></text>
+      </Select>
+      <Update id="138">
+        <text></text>
+      </Update>
+      <Invariant id="139">
+        <text></text>
+      </Invariant>
+    </State>
+    <State id="140">
+      <children id="141"/>
+      <location class="Point2D.Double" id="142" x="452.1591035847463" y="742.0"/>
+      <ID>EAID_d7b921cc-2d09-4f39-80a5-653269418129</ID>
+      <id id="143"/>
+      <backgroundColor reference="8"/>
+      <borderColor reference="9"/>
+      <textColor reference="10"/>
+      <name id="144">
+        <text>Over</text>
+      </name>
+      <Select id="145">
+        <text></text>
+      </Select>
+      <Update id="146">
+        <text></text>
+      </Update>
+      <Invariant id="147">
+        <text></text>
+      </Invariant>
+    </State>
+    <State id="148">
+      <children id="149"/>
+      <location class="Point2D.Double" id="150" x="596.5676213450081" y="735.7841423000544"/>
+      <ID>EAID_cc7c10e7-2c28-4243-9d12-2f93440d11cd</ID>
+      <id id="151"/>
+      <backgroundColor reference="8"/>
+      <borderColor reference="9"/>
+      <textColor reference="10"/>
+      <name id="152">
+        <text>Planning</text>
+      </name>
+      <Select id="153">
+        <text></text>
+      </Select>
+      <Update id="154">
+        <text></text>
+      </Update>
+      <Invariant id="155">
+        <text></text>
+      </Invariant>
+    </State>
+    <State id="156">
+      <children id="157"/>
+      <location class="Point2D.Double" id="158" x="576.3511003899619" y="1052.2458245603918"/>
+      <ID>EAID_a23719e6-fb64-4a26-b8a0-d2c585ae2a5a</ID>
+      <id id="159"/>
+      <backgroundColor reference="8"/>
+      <borderColor reference="9"/>
+      <textColor reference="10"/>
+      <name id="160">
+        <text>Over</text>
+      </name>
+      <Select id="161">
+        <text></text>
+      </Select>
+      <Update id="162">
+        <text></text>
+      </Update>
+      <Invariant id="163">
+        <text></text>
+      </Invariant>
+    </State>
+    <State id="164">
+      <children id="165"/>
+      <location class="Point2D.Double" id="166" x="741.0" y="851.8374434699401"/>
+      <ID>EAID_81299813-0b82-47e2-a985-54645dce434f</ID>
+      <id id="167"/>
+      <backgroundColor reference="8"/>
+      <borderColor reference="9"/>
+      <textColor reference="10"/>
+      <name id="168">
+        <text>Changed</text>
+      </name>
+      <Select id="169">
+        <text></text>
+      </Select>
+      <Update id="170">
+        <text></text>
+      </Update>
+      <Invariant id="171">
+        <text></text>
+      </Invariant>
+    </State>
+    <State id="172">
+      <children id="173"/>
+      <location class="Point2D.Double" id="174" x="596.5676213450081" y="1470.5156466853239"/>
+      <ID>EAID_c2027d8d-4e09-4415-822c-70d5228bf650</ID>
+      <id id="175"/>
+      <backgroundColor reference="8"/>
+      <borderColor reference="9"/>
+      <textColor reference="10"/>
+      <name id="176">
+        <text>Over</text>
+      </name>
+      <Select id="177">
+        <text></text>
+      </Select>
+      <Update id="178">
+        <text></text>
+      </Update>
+      <Invariant id="179">
+        <text></text>
+      </Invariant>
+    </State>
+    <Constraint id="180">
+      <children id="181"/>
+      <location class="Point2D.Double" id="182" x="358.0" y="367.0"/>
+      <ID>EAID_90410906-b51c-4c80-ad71-103db3ec2d45</ID>
+      <id id="183"/>
+      <backgroundColor reference="8"/>
+      <borderColor reference="9"/>
+      <textColor reference="10"/>
+      <width>150.0</width>
+      <height>50.0</height>
+      <name id="184">
+        <text>sensor_advantage&lt;1</text>
+      </name>
+    </Constraint>
+    <Constraint id="185">
+      <children id="186"/>
+      <location class="Point2D.Double" id="187" x="364.9460355750136" y="446.0"/>
+      <ID>EAID_4ce19582-451a-49c3-9e78-a1b40d4344a4</ID>
+      <id id="188"/>
+      <backgroundColor reference="8"/>
+      <borderColor reference="9"/>
+      <textColor reference="10"/>
+      <width>150.0</width>
+      <height>50.0</height>
+      <name id="189">
+        <text>sensor_advantage&gt;=1</text>
+      </name>
+    </Constraint>
+    <Constraint id="190">
+      <children id="191"/>
+      <location class="Point2D.Double" id="192" x="522.0273138400435" y="554.0"/>
+      <ID>EAID_73955273-737a-47a3-9d3e-7c4df59384de</ID>
+      <id id="193"/>
+      <backgroundColor reference="8"/>
+      <borderColor reference="9"/>
+      <textColor reference="10"/>
+      <width>150.0</width>
+      <height>50.0</height>
+      <name id="194">
+        <text>has_armed==false||current_alt&lt;=0</text>
+      </name>
+    </Constraint>
+    <Constraint id="195">
+      <children id="196"/>
+      <location class="Point2D.Double" id="197" x="522.405728070049" y="628.0"/>
+      <ID>EAID_74bf682f-20e0-4fcb-9de3-438c10f1adc7</ID>
+      <id id="198"/>
+      <backgroundColor reference="8"/>
+      <borderColor reference="9"/>
+      <textColor reference="10"/>
+      <width>150.0</width>
+      <height>50.0</height>
+      <name id="199">
+        <text>has_armed==true&amp;&amp;current_alt&gt;0</text>
+      </name>
+    </Constraint>
+    <LifelineNode id="200">
+      <children id="201">
+        <ActivationBarNode id="202">
+          <children id="203"/>
+          <parent class="LifelineNode" reference="200"/>
+          <location class="Point2D.Double" id="204" x="57.0" y="695.5696111103102"/>
+          <backgroundColor reference="8"/>
+          <borderColor reference="9"/>
+          <textColor reference="10"/>
+        </ActivationBarNode>
+      </children>
+      <location class="Point2D.Double" id="205" x="573.6573851023621" y="2.3784142300054327"/>
+      <ID>EAID_abbf6d3d-7240-4123-a366-8f58a1cb0c6d</ID>
+      <id id="206"/>
+      <backgroundColor reference="8"/>
+      <borderColor reference="9"/>
+      <textColor reference="10"/>
+      <global id="207">
+        <text></text>
+      </global>
+      <local id="208">
+        <text></text>
+      </local>
+      <name id="209">
+        <text>&lt;&lt;Planner&amp;Executer&gt;&gt; :GPS_status_P&amp;E</text>
+      </name>
+      <width>130.0</width>
+    </LifelineNode>
+    <State id="210">
+      <children id="211"/>
+      <location class="Point2D.Double" id="212" x="750.3896895667167" y="991.7987339122693"/>
+      <ID>EAID_09c452fb-da51-4646-8066-112aec5a5fbe</ID>
+      <id id="213"/>
+      <backgroundColor reference="44"/>
+      <borderColor reference="45"/>
+      <textColor reference="46"/>
+      <name id="214">
+        <text>Changed</text>
+      </name>
+      <Select id="215">
+        <text></text>
+      </Select>
+      <Update id="216">
+        <text></text>
+      </Update>
+      <Invariant id="217">
+        <text></text>
+      </Invariant>
+    </State>
+    <CombinedFragment id="218">
+      <children id="219"/>
+      <location class="Point2D.Double" id="220" x="576.7654507763197" y="783.6874887867931"/>
+      <ID>EAID_724cdda0-46a8-481f-8824-b870e4eae656</ID>
+      <id id="221"/>
+      <backgroundColor reference="44"/>
+      <borderColor reference="45"/>
+      <textColor reference="46"/>
+      <type id="222" name="ALT"/>
+      <fragmentType>ALT</fragmentType>
+      <conditions id="223">
+        <string>last_change_time&gt;=5000&amp;&amp;sensor_advantage&gt;=2</string>
+        <string>last_change_time&gt;=20000&amp;&amp;sensor_advantage&gt;=1</string>
+      </conditions>
+      <fragmentParts id="224">
+        <com.horstmann.violet.product.diagram.abstracts.property.FragmentPart id="225">
+          <conditionText>last_change_time&gt;=5000&amp;&amp;sensor_advantage&gt;=2</conditionText>
+          <coveredMessagesID id="226">
+            <string>EAID_fdbda548-8b66-4170-b4af-8dc203605ba9</string>
+          </coveredMessagesID>
+          <borderline class="java.awt.geom.Line2D$Double" id="227">
+            <x1>576.7654507763197</x1>
+            <y1>783.6874887867931</y1>
+            <x2>940.8760326466954</x2>
+            <y2>783.6874887867931</y2>
+          </borderline>
+          <nestingChildNodesID id="228"/>
+          <borderlinehaschanged>false</borderlinehaschanged>
+          <size>124.92004824517142</size>
+        </com.horstmann.violet.product.diagram.abstracts.property.FragmentPart>
+        <com.horstmann.violet.product.diagram.abstracts.property.FragmentPart id="229">
+          <conditionText>last_change_time&gt;=20000&amp;&amp;sensor_advantage&gt;=1</conditionText>
+          <coveredMessagesID id="230">
+            <string>EAID_75f7f54b-3252-46a6-ae34-e8e5786c70d4</string>
+          </coveredMessagesID>
+          <borderline class="java.awt.geom.Line2D$Double" id="231">
+            <x1>576.7654507763197</x1>
+            <y1>908.6075370319645</y1>
+            <x2>940.8760326466954</x2>
+            <y2>908.6075370319645</y2>
+          </borderline>
+          <nestingChildNodesID id="232"/>
+          <borderlinehaschanged>true</borderlinehaschanged>
+          <size>130.86608382018494</size>
+        </com.horstmann.violet.product.diagram.abstracts.property.FragmentPart>
+      </fragmentParts>
+      <name></name>
+      <width>364.11058187037577</width>
+      <height>255.78613206535636</height>
+    </CombinedFragment>
+  </nodes>
+  <edges id="233">
+    <CallEdge id="234">
+      <start class="ActivationBarNode" reference="5"/>
+      <end class="ActivationBarNode" reference="18"/>
+      <startLocation class="Point2D.Double" id="235" x="223.0" y="323.1911968803048"/>
+      <endLocation class="Point2D.Double" id="236" x="346.0" y="323.1911968803048"/>
+      <id id="237"/>
+      <ID>EAID_68dc0c56-2acf-436a-abe6-32cac8ed7af9</ID>
+      <edgeColor id="238">
+        <red>0</red>
+        <green>0</green>
+        <blue>0</blue>
+        <alpha>255</alpha>
+      </edgeColor>
+      <dash id="239">
+        <float>3.0</float>
+        <float>3.0</float>
+      </dash>
+      <edgeStroke class="java.awt.BasicStroke" id="240">
+        <width>5.0</width>
+        <join>0</join>
+        <cap>2</cap>
+        <miterlimit>10.0</miterlimit>
+        <dash__phase>0.0</dash__phase>
+      </edgeStroke>
+      <middleLabel>monitor()</middleLabel>
+      <signal>false</signal>
+    </CallEdge>
+    <CallEdge id="241">
+      <start class="ActivationBarNode" reference="18"/>
+      <end class="ActivationBarNode" reference="28"/>
+      <startLocation class="Point2D.Double" id="242" x="362.0" y="507.1911968803048"/>
+      <endLocation class="Point2D.Double" id="243" x="495.5" y="507.1911968803048"/>
+      <id id="244"/>
+      <ID>EAID_b009d20a-60d4-47bb-a4d4-9eec972dbe73</ID>
+      <edgeColor id="245">
+        <red>0</red>
+        <green>0</green>
+        <blue>0</blue>
+        <alpha>255</alpha>
+      </edgeColor>
+      <dash reference="239"/>
+      <edgeStroke class="java.awt.BasicStroke" reference="240"/>
+      <middleLabel>trigger()</middleLabel>
+      <signal>false</signal>
+    </CallEdge>
+    <CallEdge id="246">
+      <start class="ActivationBarNode" reference="202"/>
+      <end class="ActivationBarNode" reference="38"/>
+      <startLocation class="Point2D.Double" id="247" x="646.6573851023621" y="840.9746759252586"/>
+      <endLocation class="Point2D.Double" id="248" x="778.5" y="840.9746759252586"/>
+      <id id="249"/>
+      <ID>EAID_fdbda548-8b66-4170-b4af-8dc203605ba9</ID>
+      <edgeColor id="250">
+        <red>0</red>
+        <green>0</green>
+        <blue>0</blue>
+        <alpha>255</alpha>
+      </edgeColor>
+      <dash reference="239"/>
+      <edgeStroke class="java.awt.BasicStroke" reference="240"/>
+      <middleLabel>change()</middleLabel>
+      <signal>false</signal>
+    </CallEdge>
+    <CallEdge id="251">
+      <start class="ActivationBarNode" reference="28"/>
+      <end class="ActivationBarNode" reference="202"/>
+      <startLocation class="Point2D.Double" id="252" x="511.5" y="695.5696111103102"/>
+      <endLocation class="Point2D.Double" id="253" x="630.6573851023621" y="695.5696111103102"/>
+      <id id="254"/>
+      <ID>EAID_ffa4af74-9632-419e-b112-d89d70a8b229</ID>
+      <edgeColor reference="245"/>
+      <dash reference="239"/>
+      <edgeStroke class="java.awt.BasicStroke" reference="240"/>
+      <middleLabel>trigger()</middleLabel>
+      <signal>false</signal>
+    </CallEdge>
+    <CallEdge id="255">
+      <start class="ActivationBarNode" reference="202"/>
+      <end class="ActivationBarNode" reference="41"/>
+      <startLocation class="Point2D.Double" id="256" x="646.6573851023621" y="983.4742841072502"/>
+      <endLocation class="Point2D.Double" id="257" x="778.5" y="983.4742841072502"/>
+      <id id="258"/>
+      <ID>EAID_75f7f54b-3252-46a6-ae34-e8e5786c70d4</ID>
+      <edgeColor reference="250"/>
+      <dash id="259">
+        <float>3.0</float>
+        <float>3.0</float>
+      </dash>
+      <edgeStroke class="java.awt.BasicStroke" id="260">
+        <width>5.0</width>
+        <join>0</join>
+        <cap>2</cap>
+        <miterlimit>10.0</miterlimit>
+        <dash__phase>0.0</dash__phase>
+      </edgeStroke>
+      <middleLabel>change()</middleLabel>
+      <signal>false</signal>
+    </CallEdge>
+  </edges>
+</SequenceDiagramGraph>

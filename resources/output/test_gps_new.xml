@@ -1,0 +1,432 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<nta>
+  <declaration>chan monitor_M,triggerTA_M,triggerTB_M,changeToRTL_M,changeToDestory,changeToContinueMission,monitor_B,triggerTA_B,triggerTP_B,changeToDisarmed,changeToRTL_B,changeToLand;</declaration>
+  <template>
+    <name><![CDATA[ mission_Probe]]></name>
+    <location id="id58" y="37" x="35">
+      <name y="37" x="35"><![CDATA[Waiting]]></name>
+      <label y="37" x="35" kind="invariant"><![CDATA[t<100]]></label>
+    </location>
+    <location id="id98" y="37" x="265">
+      <name y="37" x="265"><![CDATA[Probing]]></name>
+    </location>
+    <init ref="id58"/>
+    <transition>
+      <source ref="id58"/>
+      <target ref="id98"/>
+      <label y="42" x="155" kind="guard"><![CDATA[tag0==1&&tag1==1&&t==100]]></label>
+    </transition>
+    <transition>
+      <source ref="id98"/>
+      <target ref="id58"/>
+      <label y="50" x="50" kind="select"></label>
+      <label y="155" x="42" kind="synchronisation"><![CDATA[monitor_M! ]]></label>
+      <label y="160" x="47" kind="guard"><![CDATA[tag0==1]]></label>
+      <label y="165" x="52" kind="assignment"></label>
+      <nail y="150" x="37"/>
+    </transition>
+  </template>
+  <template>
+    <name><![CDATA[ mission_Monitor]]></name>
+    <location id="id66" y="37" x="265">
+      <name y="37" x="265"><![CDATA[Waiting]]></name>
+    </location>
+    <location id="id122" y="150" x="35">
+      <name y="150" x="35"><![CDATA[Over]]></name>
+    </location>
+    <location id="id106" y="150" x="495">
+      <name y="150" x="495"><![CDATA[Comparing]]></name>
+    </location>
+    <init ref="id66"/>
+    <transition>
+      <source ref="id122"/>
+      <target ref="id66"/>
+      <label y="98" x="155" kind="assignment"></label>
+    </transition>
+    <transition>
+      <source ref="id66"/>
+      <target ref="id106"/>
+      <label y="98" x="385" kind="synchronisation"><![CDATA[monitor_M?]]></label>
+      <label y="103" x="390" kind="assignment"></label>
+    </transition>
+    <transition>
+      <source ref="id106"/>
+      <target ref="id122"/>
+      <label y="155" x="270" kind="guard"><![CDATA[tag0==1&&tag1==1&&mission_exist==true]]></label>
+      <label y="160" x="275" kind="assignment"></label>
+    </transition>
+    <transition>
+      <source ref="id106"/>
+      <target ref="id122"/>
+      <label y="235" x="125" kind="synchronisation"><![CDATA[triggerTA_M!]]></label>
+      <label y="240" x="130" kind="guard"><![CDATA[mission_exist==false]]></label>
+      <label y="245" x="135" kind="assignment"></label>
+      <nail y="230" x="120"/>
+    </transition>
+  </template>
+  <template>
+    <name><![CDATA[ mission_Analyzer]]></name>
+    <location id="id74" y="37" x="265">
+      <name y="37" x="265"><![CDATA[Waiting]]></name>
+    </location>
+    <location id="id146" y="150" x="35">
+      <name y="150" x="35"><![CDATA[Over]]></name>
+    </location>
+    <location id="id130" y="150" x="495">
+      <name y="150" x="495"><![CDATA[Analyzing]]></name>
+    </location>
+    <location id="id206" y="150" x="725">
+      <name y="150" x="725"><![CDATA[Mission_Waiting]]></name>
+    </location>
+    <init ref="id74"/>
+    <transition>
+      <source ref="id146"/>
+      <target ref="id74"/>
+      <label y="98" x="155" kind="assignment"></label>
+    </transition>
+    <transition>
+      <source ref="id74"/>
+      <target ref="id130"/>
+      <label y="98" x="385" kind="synchronisation"><![CDATA[triggerTA_M?]]></label>
+      <label y="103" x="390" kind="assignment"></label>
+    </transition>
+    <transition>
+      <source ref="id130"/>
+      <target ref="id146"/>
+      <label y="155" x="270" kind="guard"><![CDATA[tag0==1&&tag1==1&&has_armed==false||current_alt<5]]></label>
+      <label y="160" x="275" kind="assignment"></label>
+    </transition>
+    <transition>
+      <source ref="id130"/>
+      <target ref="id206"/>
+      <label y="155" x="615" kind="guard"><![CDATA[has_armed==true&&current_alt>=5]]></label>
+      <label y="160" x="620" kind="assignment"></label>
+    </transition>
+    <transition>
+      <source ref="id206"/>
+      <target ref="id146"/>
+      <label y="155" x="385" kind="synchronisation"><![CDATA[triggerTB_M!]]></label>
+      <label y="160" x="390" kind="assignment"></label>
+    </transition>
+  </template>
+  <template>
+    <name><![CDATA[ mission_PlannerAndExecuter]]></name>
+    <location id="id82" y="37" x="265">
+      <name y="37" x="265"><![CDATA[Waiting]]></name>
+    </location>
+    <location id="id162" y="150" x="35">
+      <name y="150" x="35"><![CDATA[Over]]></name>
+    </location>
+    <location id="id154" y="150" x="495">
+      <name y="150" x="495"><![CDATA[Planning]]></name>
+    </location>
+    <init ref="id82"/>
+    <transition>
+      <source ref="id162"/>
+      <target ref="id82"/>
+      <label y="50" x="50" kind="select"></label>
+      <label y="98" x="155" kind="assignment"></label>
+    </transition>
+    <transition>
+      <source ref="id82"/>
+      <target ref="id154"/>
+      <label y="50" x="50" kind="select"></label>
+      <label y="98" x="385" kind="synchronisation"><![CDATA[triggerTB_M?]]></label>
+      <label y="103" x="390" kind="guard"><![CDATA[tag0==1&&tag1==1]]></label>
+      <label y="108" x="395" kind="assignment"></label>
+    </transition>
+    <transition>
+      <source ref="id154"/>
+      <target ref="id162"/>
+      <label y="155" x="270" kind="synchronisation"><![CDATA[changeToRTL_M!]]></label>
+      <label y="160" x="275" kind="guard"><![CDATA[mission_done==true||mission_state=1&&battery_remain<2]]></label>
+    </transition>
+    <transition>
+      <source ref="id154"/>
+      <target ref="id162"/>
+      <label y="235" x="125" kind="synchronisation"><![CDATA[changeToDestory!]]></label>
+      <label y="240" x="130" kind="guard"><![CDATA[mission_state==2&&battery_remian==0]]></label>
+      <nail y="230" x="120"/>
+    </transition>
+    <transition>
+      <source ref="id154"/>
+      <target ref="id162"/>
+      <label y="200" x="95" kind="synchronisation"><![CDATA[changeToContinueMission!]]></label>
+      <label y="205" x="100" kind="guard"><![CDATA[mission_done==false]]></label>
+      <nail y="195" x="90"/>
+    </transition>
+  </template>
+  <template>
+    <name><![CDATA[ mission_Connecter]]></name>
+    <location id="id90" y="130" x="265">
+      <name y="130" x="265"><![CDATA[Waiting]]></name>
+    </location>
+    <location id="id170" y="130" x="495">
+      <name y="130" x="495"><![CDATA[RTL]]></name>
+    </location>
+    <location id="id178" y="37" x="35">
+      <name y="37" x="35"><![CDATA[Destory]]></name>
+    </location>
+    <location id="id214" y="225" x="35">
+      <name y="225" x="35"><![CDATA[Continue_mission]]></name>
+    </location>
+    <init ref="id90"/>
+    <transition>
+      <source ref="id90"/>
+      <target ref="id170"/>
+      <label y="50" x="50" kind="select"></label>
+      <label y="135" x="385" kind="synchronisation"><![CDATA[changeToRTL_M?]]></label>
+      <label y="140" x="390" kind="guard"><![CDATA[tag0==1&&tag1==1&&mission_done==true||mission_state=1&&battery_remain<2]]></label>
+      <label y="145" x="395" kind="assignment">current_mode=RTL</label>
+    </transition>
+    <transition>
+      <source ref="id170"/>
+      <target ref="id90"/>
+      <label y="385" x="135" kind="guard"><![CDATA[tag0==1]]></label>
+      <nail y="380" x="130"/>
+    </transition>
+    <transition>
+      <source ref="id90"/>
+      <target ref="id178"/>
+      <label y="50" x="50" kind="select"></label>
+      <label y="88" x="155" kind="synchronisation"><![CDATA[changeToDestory?]]></label>
+      <label y="93" x="160" kind="guard"><![CDATA[tag0==1&&tag1==1&&mission_done==true||mission_state=1&&battery_remain<2&&mission_state==2&&battery_remian==0]]></label>
+      <label y="98" x="165" kind="assignment"></label>
+    </transition>
+    <transition>
+      <source ref="id178"/>
+      <target ref="id90"/>
+      <label y="155" x="88" kind="guard"><![CDATA[tag0==1]]></label>
+      <nail y="150" x="83"/>
+    </transition>
+    <transition>
+      <source ref="id90"/>
+      <target ref="id214"/>
+      <label y="50" x="50" kind="select"></label>
+      <label y="182" x="155" kind="synchronisation"><![CDATA[changeToContinueMission?]]></label>
+      <label y="187" x="160" kind="guard"><![CDATA[tag0==1&&tag1==1&&mission_done==true||mission_state=1&&battery_remain<2&&mission_state==2&&battery_remian==0&&mission_done==false]]></label>
+      <label y="192" x="165" kind="assignment"></label>
+    </transition>
+    <transition>
+      <source ref="id214"/>
+      <target ref="id90"/>
+      <label y="155" x="182" kind="guard"><![CDATA[tag0==1]]></label>
+      <nail y="150" x="177"/>
+    </transition>
+  </template>
+  <template>
+    <name><![CDATA[ batt_Probe]]></name>
+    <location id="id293" y="37" x="35">
+      <name y="37" x="35"><![CDATA[Waiting]]></name>
+      <label y="37" x="35" kind="invariant"><![CDATA[t<100]]></label>
+    </location>
+    <location id="id333" y="37" x="265">
+      <name y="37" x="265"><![CDATA[Probing]]></name>
+    </location>
+    <init ref="id293"/>
+    <transition>
+      <source ref="id293"/>
+      <target ref="id333"/>
+      <label y="42" x="155" kind="guard"><![CDATA[tag0==1&&tag2==1]]></label>
+    </transition>
+    <transition>
+      <source ref="id333"/>
+      <target ref="id293"/>
+      <label y="50" x="50" kind="select"></label>
+      <label y="155" x="42" kind="synchronisation"><![CDATA[monitor_B! ]]></label>
+      <label y="160" x="47" kind="guard"><![CDATA[tag0==1]]></label>
+      <label y="165" x="52" kind="assignment"></label>
+      <nail y="150" x="37"/>
+    </transition>
+  </template>
+  <template>
+    <name><![CDATA[ batt_Monitor]]></name>
+    <location id="id301" y="37" x="265">
+      <name y="37" x="265"><![CDATA[Waiting]]></name>
+    </location>
+    <location id="id357" y="150" x="35">
+      <name y="150" x="35"><![CDATA[Over]]></name>
+    </location>
+    <location id="id341" y="150" x="495">
+      <name y="150" x="495"><![CDATA[Comparing]]></name>
+    </location>
+    <init ref="id301"/>
+    <transition>
+      <source ref="id357"/>
+      <target ref="id301"/>
+      <label y="98" x="155" kind="assignment"></label>
+    </transition>
+    <transition>
+      <source ref="id301"/>
+      <target ref="id341"/>
+      <label y="98" x="385" kind="synchronisation"><![CDATA[monitor_B?]]></label>
+      <label y="103" x="390" kind="assignment"></label>
+    </transition>
+    <transition>
+      <source ref="id341"/>
+      <target ref="id357"/>
+      <label y="155" x="270" kind="guard"><![CDATA[tag0==1&&tag2==1&&battery_hasExhausted==false]]></label>
+      <label y="160" x="275" kind="assignment"></label>
+    </transition>
+    <transition>
+      <source ref="id341"/>
+      <target ref="id357"/>
+      <label y="235" x="125" kind="synchronisation"><![CDATA[triggerTA_B!]]></label>
+      <label y="240" x="130" kind="guard"><![CDATA[battery_hasExhausted==true]]></label>
+      <label y="245" x="135" kind="assignment"></label>
+      <nail y="230" x="120"/>
+    </transition>
+  </template>
+  <template>
+    <name><![CDATA[ batt_Analyzer]]></name>
+    <location id="id309" y="37" x="265">
+      <name y="37" x="265"><![CDATA[Waiting]]></name>
+    </location>
+    <location id="id389" y="150" x="35">
+      <name y="150" x="35"><![CDATA[Over]]></name>
+    </location>
+    <location id="id365" y="150" x="495">
+      <name y="150" x="495"><![CDATA[Analyzing]]></name>
+    </location>
+    <location id="id381" y="150" x="725">
+      <name y="150" x="725"><![CDATA[Warnning]]></name>
+    </location>
+    <init ref="id309"/>
+    <transition>
+      <source ref="id389"/>
+      <target ref="id309"/>
+      <label y="98" x="155" kind="assignment"></label>
+    </transition>
+    <transition>
+      <source ref="id309"/>
+      <target ref="id365"/>
+      <label y="98" x="385" kind="synchronisation"><![CDATA[triggerTA_B?]]></label>
+      <label y="103" x="390" kind="assignment"></label>
+    </transition>
+    <transition>
+      <source ref="id365"/>
+      <target ref="id389"/>
+      <label y="155" x="270" kind="guard"><![CDATA[tag0==1&&tag2==1&&has_armed==false||need_adaptive==false||miision_state>0]]></label>
+      <label y="160" x="275" kind="assignment"></label>
+    </transition>
+    <transition>
+      <source ref="id365"/>
+      <target ref="id381"/>
+      <label y="155" x="615" kind="guard"><![CDATA[has_armed==true&&need_adaptive==true&&mission_state==0]]></label>
+      <label y="160" x="620" kind="assignment"></label>
+    </transition>
+    <transition>
+      <source ref="id381"/>
+      <target ref="id389"/>
+      <label y="155" x="385" kind="synchronisation"><![CDATA[triggerTP_B!]]></label>
+      <label y="160" x="390" kind="assignment"></label>
+    </transition>
+  </template>
+  <template>
+    <name><![CDATA[ batt_PlannerAndExecuter]]></name>
+    <location id="id317" y="37" x="265">
+      <name y="37" x="265"><![CDATA[Waiting]]></name>
+    </location>
+    <location id="id511" y="150" x="35">
+      <name y="150" x="35"><![CDATA[Over]]></name>
+    </location>
+    <location id="id397" y="150" x="495">
+      <name y="150" x="495"><![CDATA[Planning]]></name>
+    </location>
+    <init ref="id317"/>
+    <transition>
+      <source ref="id511"/>
+      <target ref="id317"/>
+      <label y="50" x="50" kind="select"></label>
+      <label y="98" x="155" kind="assignment"></label>
+    </transition>
+    <transition>
+      <source ref="id317"/>
+      <target ref="id397"/>
+      <label y="50" x="50" kind="select"></label>
+      <label y="98" x="385" kind="synchronisation"><![CDATA[triggerTP_B?]]></label>
+      <label y="103" x="390" kind="guard"><![CDATA[tag0==1&&tag2==1]]></label>
+      <label y="108" x="395" kind="assignment"></label>
+    </transition>
+    <transition>
+      <source ref="id397"/>
+      <target ref="id511"/>
+      <label y="155" x="270" kind="synchronisation"><![CDATA[changeToDisarmed!]]></label>
+      <label y="160" x="275" kind="guard"><![CDATA[should_disarmed_on_failsafe==true]]></label>
+    </transition>
+    <transition>
+      <source ref="id397"/>
+      <target ref="id511"/>
+      <label y="235" x="125" kind="synchronisation"><![CDATA[changeToRTL_B!]]></label>
+      <label y="240" x="130" kind="guard"><![CDATA[should_disarmed_on_failsafe==false&&remain_battery>=5]]></label>
+      <nail y="230" x="120"/>
+    </transition>
+    <transition>
+      <source ref="id397"/>
+      <target ref="id511"/>
+      <label y="200" x="95" kind="synchronisation"><![CDATA[changeToLand!]]></label>
+      <label y="205" x="100" kind="guard"><![CDATA[should_disarmed_on_failsafe==false&&remain_battery<5]]></label>
+      <nail y="195" x="90"/>
+    </transition>
+  </template>
+  <template>
+    <name><![CDATA[ batt_Connecter]]></name>
+    <location id="id325" y="130" x="265">
+      <name y="130" x="265"><![CDATA[Waiting]]></name>
+    </location>
+    <location id="id405" y="130" x="495">
+      <name y="130" x="495"><![CDATA[Disarmed]]></name>
+    </location>
+    <location id="id413" y="37" x="35">
+      <name y="37" x="35"><![CDATA[RTL]]></name>
+    </location>
+    <location id="id421" y="225" x="35">
+      <name y="225" x="35"><![CDATA[Land]]></name>
+    </location>
+    <init ref="id325"/>
+    <transition>
+      <source ref="id325"/>
+      <target ref="id405"/>
+      <label y="50" x="50" kind="select"></label>
+      <label y="135" x="385" kind="synchronisation"><![CDATA[changeToDisarmed?]]></label>
+      <label y="140" x="390" kind="guard"><![CDATA[tag0==1&&tag2==1&&should_disarmed_on_failsafe==true]]></label>
+      <label y="145" x="395" kind="assignment"></label>
+    </transition>
+    <transition>
+      <source ref="id405"/>
+      <target ref="id325"/>
+      <label y="385" x="135" kind="guard"><![CDATA[tag0==1]]></label>
+      <nail y="380" x="130"/>
+    </transition>
+    <transition>
+      <source ref="id325"/>
+      <target ref="id413"/>
+      <label y="50" x="50" kind="select"></label>
+      <label y="88" x="155" kind="synchronisation"><![CDATA[changeToRTL_B?]]></label>
+      <label y="93" x="160" kind="guard"><![CDATA[tag0==1&&tag2==1&&should_disarmed_on_failsafe==false&&remain_battery>=5]]></label>
+      <label y="98" x="165" kind="assignment"></label>
+    </transition>
+    <transition>
+      <source ref="id413"/>
+      <target ref="id325"/>
+      <label y="155" x="88" kind="guard"><![CDATA[tag0==1]]></label>
+      <nail y="150" x="83"/>
+    </transition>
+    <transition>
+      <source ref="id325"/>
+      <target ref="id421"/>
+      <label y="50" x="50" kind="select"></label>
+      <label y="182" x="155" kind="synchronisation"><![CDATA[changeToLand?]]></label>
+      <label y="187" x="160" kind="guard"><![CDATA[tag0==1&&tag2==1&&should_disarmed_on_failsafe==false&&remain_battery<5]]></label>
+      <label y="192" x="165" kind="assignment"></label>
+    </transition>
+    <transition>
+      <source ref="id421"/>
+      <target ref="id325"/>
+      <label y="155" x="182" kind="guard"><![CDATA[tag0==1]]></label>
+      <nail y="150" x="177"/>
+    </transition>
+  </template>
+  <system>mission_probe = mission_Probe(); mission_monitor = mission_Monitor(); mission_analyzer = mission_Analyzer(); mission_plannerandexecuter = mission_PlannerAndExecuter(); mission_connecter = mission_Connecter(); batt_probe = batt_Probe(); batt_monitor = batt_Monitor(); batt_analyzer = batt_Analyzer(); batt_plannerandexecuter = batt_PlannerAndExecuter(); batt_connecter = batt_Connecter();system mission_probe, mission_monitor, mission_analyzer, mission_plannerandexecuter, mission_connecter, batt_probe, batt_monitor, batt_analyzer, batt_plannerandexecuter, batt_connecter;</system>
+</nta>

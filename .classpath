@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
+	<classpathentry kind="lib" path="C:/Users/supercomputer/.m2/repository/dom4j/dom4j/1.6.1/dom4j-1.6.1.jar">
+		<attributes>
+			<attribute name="maven.pomderived" value="true"/>
+			<attribute name="maven.groupId" value="dom4j"/>
+			<attribute name="maven.artifactId" value="dom4j"/>
+			<attribute name="maven.version" value="1.6.1"/>
+			<attribute name="maven.scope" value="compile"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="resources/jar/jgraph.jar"/>
+	<classpathentry kind="lib" path="resources/jar/draw2d.jar"/>
+	<classpathentry kind="lib" path="resources/jar/schemaeditor.jar"/>
+	<classpathentry kind="lib" path="H:/sxs/自适应/uppaal/uppaal-4.0.14-aca/uppaal-4.0.14/uppaal.jar" sourcepath="H:/sxs/自适应/uppaal/uppaal-4.0.14-aca/uppaal-4.0.14/uppaal.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
